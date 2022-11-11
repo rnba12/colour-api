@@ -1,0 +1,30 @@
+{
+  "name": "colour-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon app.js",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnba12/colour-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnba12/colour-api/issues"
+  },
+  "homepage": "https://github.com/rnba12/colour-api#readme",
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
