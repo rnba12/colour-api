@@ -4770,3 +4770,5 @@ const colors = [
         "hex": "#acc2d9"
     }
 ]
+
+module.exports = colors;
