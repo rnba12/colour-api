@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const colourRoutes = require('./controllers/colour')
 const bodyParser = require('body-parser')
