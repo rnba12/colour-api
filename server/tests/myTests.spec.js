@@ -30,13 +30,13 @@ describe('Read colours', () => {
 
     it('should read a colour by ID', (done) => {
         request(api)
-            .get('/colours/3')
+            .get('/colour/3')
             .expect(200)
             .expect(testColour, done)
     })
 
     it('should respond to non IDs with 404', done => {
-        request(api).get('/colours/no').expect(404, done)
+        request(api).get('/colour/no').expect(404, done)
     })
 })
 
@@ -48,7 +48,7 @@ describe('Create colours', () => {
 
     it('should respond to a POST "/colours" with 201', done => {
         request(api)
-            .post('/colours')
+            .post('/colour')
             .send(testColour)
             .expect(201)
             .expect({
@@ -66,10 +66,10 @@ describe('Update colours', () => {
 describe('Delete colours', () => {
     it('should respond to DELETE "/colours/:id" with status 204', async () => {
         await request(api)
-            .delete('/colours/2')
+            .delete('/colour/2')
             .expect(204)
 
-        const updatedColors = await request(api).get('/colours')
+        const updatedColors = await request(api).get('/colour')
         expect(updatedColors.body.length).toBe(dataLength - 1)
     })
 })

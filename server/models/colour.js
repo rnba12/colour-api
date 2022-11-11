@@ -1,10 +1,16 @@
-const colourData = require('../data')
+const data = require('../data.json')
+const colourData = data.colors
 
 class Colour {
     constructor(data) {
         this.id = data.id;
         this.name = data.name;
         this.hex = data.hex;
+    }
+
+    static get all() {
+        const colours = colourData.map((colour) => new Colour(colour));
+        return colours;
     }
 
     static findById(id) {
@@ -23,6 +29,11 @@ class Colour {
     destroy() {
         const colour = colourData.filter((colour) => colour.id === this.id)[0];
         colourData.splice(colourData.indexOf(colour), 1);
+    }
+
+    update(newName, newHex) {
+        this.name = newName;
+        this.hex = newHex;
     }
 }
 
