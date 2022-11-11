@@ -4,6 +4,7 @@ const data = require('../data.json')
 
 const port = process.env.TEST_PORT
 let dataLength = data.colors.length
+console.log('data length at start: ', dataLength)
 let api
 
 beforeAll(() => {
@@ -18,9 +19,9 @@ afterAll(done => {
 })
 
 let testColour = {
-    "id": 3,
-    "name": "blue",
-    "hex": "#0343df"
+    "id": 9999,
+    "name": "orange-orange",
+    "hex": "#123456"
 }
 
 describe('Read colours', () => {
@@ -32,7 +33,11 @@ describe('Read colours', () => {
         request(api)
             .get('/colour/3')
             .expect(200)
-            .expect(testColour, done)
+            .expect({
+                "id": 3,
+                "name": "blue",
+                "hex": "#0343df"
+            }, done)
     })
 
     it('should respond to non IDs with 404', done => {
@@ -52,9 +57,9 @@ describe('Create colours', () => {
             .send(testColour)
             .expect(201)
             .expect({
-                id: 3,
-                name: "blue",
-                hex: "#0343df"
+                "id": 9999,
+                "name": "orange-orange",
+                "hex": "#123456"
             }, done)
     })
 })
