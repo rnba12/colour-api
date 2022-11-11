@@ -46,3 +46,31 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/*  */
+
+body {
+    height: 100vh
+}
+
+form > input {
+    margin: 0.5rem auto
+}
+
+form > input:last-child {
+    width: 100%
+}
+
+form > label {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem
+}
