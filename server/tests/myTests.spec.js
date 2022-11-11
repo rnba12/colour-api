@@ -32,7 +32,7 @@ describe('Read colours', () => {
         request(api)
             .get('/colours/3')
             .expect(200)
-            .expect(testColor, done)
+            .expect(testColour, done)
     })
 
     it('should respond to non IDs with 404', done => {
